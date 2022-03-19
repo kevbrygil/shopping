@@ -1,37 +1,36 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Product extends Component {
     handleClick = () => {
-        const { id, addToCart, removeFromCart, isInCart } = this.props;
+        const { id, addToCart, removeFromCart, isInCart } = this.props
 
         if (isInCart) {
-            removeFromCart(id);
+            removeFromCart(id)
         } else {
-            addToCart(id);
+            addToCart(id)
         }
     }
 
     render() {
-        const { name, price, currency, image, isInCart } = this.props;
+        const { name, price, currency, image, isInCart } = this.props
 
         return (
             <div className="product thumbnail">
                 <img src={image} alt="product" />
                 <div className="caption">
                     <h3>{name}</h3>
-                    <div className="product__price">{price} {currency}</div>
+                    <div className="product__price">
+                        {price} {currency}
+                    </div>
                     <div className="product__button-wrap">
-                        <button
-                            className={isInCart ? 'btn btn-danger' : 'btn btn-primary'}
-                            onClick={this.handleClick}
-                        >
+                        <button className={isInCart ? 'btn btn-danger' : 'btn btn-primary'} onClick={this.handleClick}>
                             {isInCart ? 'Remove' : 'Add'}
                         </button>
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
@@ -46,4 +45,4 @@ Product.propTypes = {
     removeFromCart: PropTypes.func.isRequired,
 }
 
-export default Product;
+export default Product

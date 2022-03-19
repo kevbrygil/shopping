@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CartItem from './CartItem'
+import Router from 'next/router'
 
 const Cart = ({ items, total, currency, removeFromCart }) => {
     return (
@@ -24,9 +25,14 @@ const Cart = ({ items, total, currency, removeFromCart }) => {
                         </div>
                         {items.length > 0 && (
                             <p>
-                                <button className="btn btn-primary" type="button">
+                                <a
+                                    href="portal/pay"
+                                    className="btn btn-primary"
+                                    onClick={() => {
+                                        Router.replace('/portal//')
+                                    }}>
                                     Comprar <span className="badge">{items.length}</span>
-                                </button>
+                                </a>
                             </p>
                         )}
                     </div>
