@@ -27,7 +27,7 @@ const Cart = ({ items, total, currency, removeFromCart }) => {
                         {items.length === 0 && <div className="alert alert-info">Cart is empty</div>}
                         <div className="cart__total">
                             Sub Total: {total} {currency} <br />
-                            Sub Total: {total + total * 0.16} {currency}
+                            Total: {(total + total * 0.16).toFixed(2)} {currency}
                         </div>
                         {items.length > 0 && Router?.pathname !== '/portal/pay' && (
                             <p>
