@@ -26,10 +26,10 @@ const Cart = ({ items, total, currency, removeFromCart }) => {
                         {items.length > 0 && (
                             <p>
                                 <a
-                                    href="portal/pay"
+                                    href="#"
                                     className="btn btn-primary"
                                     onClick={() => {
-                                        Router.replace('/portal//')
+                                        Router.replace('/portal/pay')
                                     }}>
                                     Comprar <span className="badge">{items.length}</span>
                                 </a>
