@@ -1,19 +1,17 @@
 import React from 'react'
 import Authenticated from '@/layouts/Authenticated'
 import Head from '@/components/General/Head'
-import Cart from '@/containers/Cart'
 
-const Pay = () => {
+const Thanks = () => {
     return (
         <>
             <Head>
-                <title>Confirmar</title>
+                <title>Gracias</title>
             </Head>
             <div className="container-fluid">
                 <div className="row">
-                    <h2>Confirmar</h2>
-                    <div className="col-md-8">
-                        <Cart />
+                    <div className="col-sm-offset-4 col-sm-4">
+                        <h2 className="text-info">Gracias por su compra</h2>
                     </div>
                 </div>
             </div>
@@ -21,6 +19,6 @@ const Pay = () => {
     )
 }
 
-export default Pay
+export default Thanks
 
-Pay.layout = Authenticated
+Thanks.layout = Authenticated

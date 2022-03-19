@@ -1,9 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CartItem from './CartItem'
+import Link from 'next/link'
 import Router from 'next/router'
 
 const Cart = ({ items, total, currency, removeFromCart }) => {
+    const removeall = () => {
+        if (items.length > 0) {
+            items.map((item) => removeFromCart(item.id))
+        }
+    }
     return (
         <div>
             <h3>Shopping Cart</h3>
@@ -23,21 +29,30 @@ const Cart = ({ items, total, currency, removeFromCart }) => {
                             Sub Total: {total} {currency} <br />
                             Sub Total: {total + total * 0.16} {currency}
                         </div>
-                        {items.length > 0 && (
+                        {items.length > 0 && Router?.pathname !== '/portal/pay' && (
                             <p>
-                                <a
-                                    href="#"
-                                    className="btn btn-primary"
-                                    onClick={() => {
-                                        Router.replace('/portal/pay')
-                                    }}>
-                                    Comprar <span className="badge">{items.length}</span>
-                                </a>
+                                <Link href="/portal/pay">
+                                    <a className="btn btn-primary">
+                                        Comprar <span className="badge">{items.length}</span>
+                                    </a>
+                                </Link>
                             </p>
                         )}
                     </div>
                 </div>
             </div>
+            {items.length > 0 && Router?.pathname === '/portal/pay' && (
+                <p>
+                    <a
+                        className="btn btn-primary"
+                        onClick={() => {
+                            removeall()
+                            Router.replace('/portal/thanks')
+                        }}>
+                        Pagar <span className="badge">{items.length}</span>
+                    </a>
+                </p>
+            )}
         </div>
     )
 }
