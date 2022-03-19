@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/components/*": ["components/*"],
+            "@/containers/*": ["containers/*"],
+            "@/ducks/*": ["ducks/*"],
+            "@/store/*": ["store/*"],
+            "@/requests/*": ["requests/*"],
+            "@/data/*": ["data/*"],
+            "@/layouts/*": ["layouts/*"],
+            "@/styles/*": ["styles/*"],
+            "@/swr/*": ["swr/*"],
+        }
+    },
+    "include": [
+        "**/*",
+        "./pages/*.{js,ts,jsx,tsx}",
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./pages/**/**/*.{js,ts,jsx,tsx}",
+        "./pages/**/**/**/*.{js,ts,jsx,tsx}",
+        "./pages/**/**/**/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+        "./containers/*.{js,ts,jsx,tsx}",
+        "./ducks/*.{js,ts,jsx,tsx}",
+        "./store/*.{js,ts,jsx,tsx}",
+        "./layouts/*.{js,ts,jsx,tsx}",
+        "./styles/*.{js,ts,jsx,tsx}",
+        "./swr/*.{js,ts,jsx,tsx}",
+    ],
+    "exclude": ["node_modules", "build", "public", ".next"]
+}

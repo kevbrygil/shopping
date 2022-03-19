@@ -1,0 +1,15 @@
+.product {
+  margin: 0;
+  overflow: auto;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.product__price {
+  display: inline-block;
+  line-height: 34px;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.product__button-wrap {
+  float: right;
+}
